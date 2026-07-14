@@ -1,20 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Your Name</title>
-</head>
-<body>
-    <h1>Your Name</h1>
-    <p>Lecturer / Researcher in AI, Computer Vision, and Biomedical Image Analysis.</p>
+---
+layout: default
+title : Homepage
+navbar_title: Home (Layout 2)
+---
+{% include widgets/profile_card.html %}
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Computer Vision</li>
-        <li>Deep Learning</li>
-        <li>Biomedical Image Analysis</li>
-        <li>Biometrics and Privacy-Preserving AI</li>
-    </ul>
+{% if site.data.display.homepage.show_experience %}
+    {% include widgets/experience_card.html %}
+{% endif %}
 
-</body>
-</html>
+{% if site.data.display.homepage.show_news %}
+    {% assign count_news = site.news | size %}
+    {% if count_news > 0 %}
+        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+    {% endif %}
+{% endif %}
+
+{% if site.data.display.homepage.show_selected_publications %}
+    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
+    {% 
+        include widgets/publication_card.html 
+        publications=pubs
+        title='<i class="fas fa-star"></i> Selected Publications'
+    %}
+{% endif %}
+
+<div class="homepage-pageviews mt-5 mb-4">
+    <div class="pageviews-count">
+        <span id="pageviews-total">--</span> Total Pageviews
+    </div>
+
+    <div id="visitor-map" class="visitor-map"></div>
+</div>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="{{ '/assets/js/pageviews.js' | relative_url }}"></script>

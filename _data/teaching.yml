@@ -1,0 +1,48 @@
+courses:
+  - code: 7006ICT
+    title: Introduction to Artificial Intelligence
+    # role: Course Convenor / Course Development Team Lead
+    level: Postgraduate
+    university: Griffith Univeristy
+    years: 2024-Now
+    # description: >
+    #   Led postgraduate teaching in artificial intelligence, covering core AI concepts,
+    #   machine learning foundations, and practical AI applications.
+
+  - code: 1013ICT
+    title: Mathematics for Computer Science
+    # role: Course Convenor
+    level: Undergraduate
+    university: Griffith Univeristy
+    years: 2024-Now
+    # description: >
+    #   Redesigned and convened this core programming course, with a focus on
+    #   programming fundamentals, problem solving, software development practice,
+    #   and student engagement.
+
+  - code: 3801ICT
+    title: Numerical Algorithms
+    # role: Course Convenor
+    level: Undergraduate
+    university: Griffith Univeristy
+    years: 2024-2025
+    # description: >
+    #   Led postgraduate teaching on AI governance, responsible AI, ethical issues,
+    #   and organisational implications of emerging information technologies.
+
+  - code: COMP9517
+    title: Computer Vision
+    # role: Course Convenor / Teaching Team Lead
+    level: Undergraduates & Postgraduates
+    university: Univeristy of New South Wales
+    years: 2021-2022
+    # description: >
+    #   Led postgraduate teaching on AI governance, responsible AI, ethical issues,
+    #   and organisational implications of emerging information technologies.  
+
+  - code: COMP SCI 7205A
+    title: Artificial Intelligence and Machine Learning
+    # role: Course Convenor / Teaching Team Lead
+    level: Postgraduates
+    university: University of Adelaide
+    years: T2/2022

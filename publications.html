@@ -1,0 +1,158 @@
+---
+layout: default
+title : Publications
+navbar_title: Publications
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-year" data-offset="200"
+---
+
+{% assign cutoff_year = 2020 %}
+{% assign publications_sorted = site.publications | sort: "date" | reverse %}
+{% assign pubs_by_year = publications_sorted | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+{% assign has_before_cutoff = false %}
+{% for item in publications_sorted %}
+    {% assign item_year = item.date | date: "%Y" | plus: 0 %}
+    {% if item_year < cutoff_year %}
+        {% assign has_before_cutoff = true %}
+    {% endif %}
+{% endfor %}
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+        <div id="publication-category-filter" class="publication-category-filter nav nav-pills bg-light py-1 mb-2">
+            <a class="nav-link active publication-category-all" href="#" data-category-filter="all">All</a>
+
+            <div class="publication-category-list">
+                <a class="nav-link" href="#" data-category-filter="biomedical-image-computing">Biomedical Image Computing</a>
+                <a class="nav-link" href="#" data-category-filter="multimodal">Multimodal Biomedical AI</a>
+                <a class="nav-link" href="#" data-category-filter="3d-vision">3D/4D Vision</a>
+                <a class="nav-link" href="#" data-category-filter="trustworthy-ai">Trustworthy AI</a> 
+                <a class="nav-link" href="#" data-category-filter="neuroimaging">Neuroimaging &amp; Brain-Signals</a>
+                <a class="nav-link" href="#" data-category-filter="computational-pathology">Computational Pathology</a>
+                <a class="nav-link" href="#" data-category-filter="computational-microscopy">Computational Microscopy</a>
+                
+            </div>
+        </div>
+
+        {% for year in pubs_by_year %}
+        {% assign year_number = year.name | plus: 0 %}
+        {% if year_number >= cutoff_year %}
+        <div class="publication-year-section">
+            <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+            <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+                {% for item in year.items %}
+                    {% if item.categories %}
+                        {% assign item_categories = item.categories | join: "|" %}
+                    {% elsif item.category %}
+                        {% assign item_categories = item.category %}
+                    {% else %}
+                        {% assign item_categories = "" %}
+                    {% endif %}
+
+                    <div class="publication-entry" data-categories="{{ item_categories | escape }}">
+                        {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% if has_before_cutoff %}
+        <div class="publication-year-section">
+            <h2 class="pt-4" id="year-before-2020">Before 2020</h2>
+            <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+                {% for item in publications_sorted %}
+                    {% assign item_year = item.date | date: "%Y" | plus: 0 %}
+                    {% if item_year < cutoff_year %}
+                        {% if item.categories %}
+                            {% assign item_categories = item.categories | join: "|" %}
+                        {% elsif item.category %}
+                            {% assign item_categories = item.category %}
+                        {% else %}
+                            {% assign item_categories = "" %}
+                        {% endif %}
+
+                        <div class="publication-entry" data-categories="{{ item_categories | escape }}">
+                            {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-year" class="nav nav-pills flex-column publication-year-nav">
+            {% for year in pubs_by_year %}
+            {% assign year_number = year.name | plus: 0 %}
+            {% if year_number >= cutoff_year %}
+            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+            {% endif %}
+            {% endfor %}
+
+            {% if has_before_cutoff %}
+            <a class="nav-link d-block" href="#year-before-2020">Before 2020</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('[data-category-filter]');
+    const entries = document.querySelectorAll('.publication-entry');
+    const yearSections = document.querySelectorAll('.publication-year-section');
+
+    function getEntryCategories(entry) {
+        return (entry.dataset.categories || '')
+            .split('|')
+            .map(function (category) {
+                return category.trim();
+            })
+            .filter(Boolean);
+    }
+
+    function updateMainYearSections() {
+        yearSections.forEach(function (section) {
+            const hasVisibleEntry = section.querySelector('.publication-entry:not(.d-none)');
+            section.classList.toggle('d-none', !hasVisibleEntry);
+        });
+    }
+
+    function applyFilter(selectedCategory) {
+        entries.forEach(function (entry) {
+            const categories = getEntryCategories(entry);
+
+            const shouldShow =
+                selectedCategory === 'all' ||
+                categories.includes(selectedCategory);
+
+            entry.classList.toggle('d-none', !shouldShow);
+        });
+
+        buttons.forEach(function (button) {
+            button.classList.toggle(
+                'active',
+                button.dataset.categoryFilter === selectedCategory
+            );
+        });
+
+        updateMainYearSections();
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            applyFilter(button.dataset.categoryFilter);
+        });
+    });
+});
+</script>

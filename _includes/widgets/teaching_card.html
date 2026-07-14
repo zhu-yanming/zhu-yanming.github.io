@@ -1,0 +1,44 @@
+<div class="card shadow-sm rounded-xl mb-4">
+    <div class="card-body">
+        <h2 class="card-title teaching-card-title mb-4">
+            <i class="fas fa-chalkboard-teacher mr-2"></i>Teaching
+        </h2>
+
+        <div class="teaching-list">
+            {% for course in site.data.teaching.courses %}
+            <div class="teaching-item {% unless forloop.last %}border-bottom{% endunless %}">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div>
+                        <h5 class="mb-0 teaching-course-title">
+                            <span class="teaching-code">{{ course.code }}</span>
+                            {{ course.title }}
+                        </h5>
+
+                        {% if course.university %}
+                        <div class="teaching-university">
+                            {{ course.university }}
+                        </div>
+                        {% endif %}
+
+                        <div class="teaching-meta mb-2">
+                            {{ course.role }}
+                            {% if course.level %}
+                            {{ course.level }}
+                            {% endif %}
+                            {% if course.years %}
+                            · {{ course.years }}
+                            {% endif %}
+                        </div>
+
+                        {% if course.description %}
+                        <p class="mb-0 teaching-description">
+                            {{ course.description }}
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

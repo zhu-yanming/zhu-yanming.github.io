@@ -1,0 +1,40 @@
+{% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
+
+<div class="my-3 bg-white shadow-sm rounded-xl">
+    <h5 class="p-3 mb-0 border-bottom border-gray font-weight-bold">
+        <i class="fas fa-rss"></i> News
+    </h5>
+
+    <!-- <div class="pl-5 px-3 pb-2"> -->
+    <div style="padding-left: 2.2rem; padding-right: 1rem; padding-bottom: 0.5rem;">
+        {% for year in news_by_year %}
+        <div class="d-flex py-3 {% if not_first -%}border-top border-gray{%- endif %}">
+            {% assign not_first = true %}
+
+            <div class="text-muted" style="width: 3.6rem; flex: 0 0 3.6rem; line-height: 1.45;">
+                {{ year.name }}
+            </div>
+
+            <div style="flex: 1;">
+                {% assign news_by_month = year.items | group_by_exp: "item", "item.date | date: '%m'" %}
+
+                {% for month in news_by_month %}
+                <div class="d-flex align-items-start" {% unless forloop.first %}style="margin-top: 1.2rem;"{% endunless %}>
+                    <div class="text-muted no-break" style="width: 2.4rem; flex: 0 0 2.4rem; margin-right: 0.45rem; line-height: 1.45;">
+                        <i>{{ month.items[0].date | date: "%b" }}</i>
+                    </div>
+
+                    <div style="flex: 1;">
+                        {% for item in month.items %}
+                        <div{% unless forloop.first %} style="margin-top: 0.25rem;"{% endunless %}>
+                            {{ item.title }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
