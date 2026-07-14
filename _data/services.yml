@@ -1,0 +1,113 @@
+sections:
+  - title: "Editorial Boards"
+    icon: "fas fa-book-open"
+    items:
+      - role: "Associate Editor"
+        name: "Springer Nature Computer Science"
+        period: "2026–Present"
+
+      - role: "Associate Editor"
+        name: "The Visual Computer"
+        period: "2026–Present"
+
+      - role: "Associate Editor"
+        name: "KSII Transactions on Internet and Information Systems"
+        period: "2022–2025"
+
+      - role: "Guest Editor"
+        name: "Sensors"
+        period: "2022–2023; 2025–2026; 2026-2027"
+
+
+  - title: "Conference Chair"
+    icon: "fas fa-users"
+    items:
+      - role: "Poster Session Chair"
+        name: "IEEE Symposium Series on Computational Intelligenced (SSCI)"
+        # organisation: "IEEE SSCI"
+        period: "2026"
+
+      - role: "Organising Chair"
+        name: "Asian Conference on Pattern Recognition (ACPR)"
+        # organisation: "ACPR"
+        period: "2025"
+
+      - role: "Finance Chair"
+        name: "International Conference on Parallel and Distributed Computing, Applications and Technologies (PDCAT)"
+        # organisation: "PDCAT"
+        period: "2025"
+
+      - role: "Publication Chair"
+        name: "International Conference on Privacy, Security and Trust (PST)"
+        # organisation: "PST"
+        period: "2024"
+
+
+  # - title: "Program Committees"
+  #   icon: "fas fa-clipboard-check"
+  #   items:
+  #     - role: "Program Committee"
+  #       name: "Conference on Neural Information Processing Systems"
+  #       organisation: "NeurIPS"
+  #       period: "2026"
+
+  #     - role: "Program Committee"
+  #       name: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+  #       organisation: "CVPR"
+  #       period: "2026"
+
+  #     - role: "Program Committee"
+  #       name: "ACM Multimedia"
+  #       organisation: "ACM MM"
+  #       period: "2024–2026"
+
+  #     - role: "Program Committee"
+  #       name: "International Conference on Medical Image Computing and Computer-Assisted Intervention"
+  #       organisation: "MICCAI"
+  #       period: "2025–2026"
+
+  #     - role: "Program Committee"
+  #       name: "IEEE International Symposium on Biomedical Imaging"
+  #       organisation: "ISBI"
+  #       period: "2024–2026"
+
+  #     - role: "Program Committee"
+  #       name: "AAAI Conference on Artificial Intelligence"
+  #       organisation: "AAAI"
+  #       period: "2026"
+
+  #     - role: "Program Committee"
+  #       name: "IEEE/CVF International Conference on Computer Vision"
+  #       organisation: "ICCV"
+  #       period: "2025"
+
+
+  # - title: "Reviewing"
+  #   icon: "fas fa-file-circle-check"
+  #   items:
+  #     - role: "Journal Reviewer"
+  #       name: "15+ scientific journals"
+  #       organisation: "Including IEEE Transactions on Medical Imaging and Bioinformatics"
+
+  #     - role: "Conference Reviewer"
+  #       name: "10+ international conferences"
+  #       organisation: "Including CVPR, ICCV, ECCV, AAAI, MICCAI and ICME"
+
+
+  - title: "Internal Academic Service"
+    icon: "fas fa-building-columns"
+    items:
+      - role: "Peer-Mentor Coordinator"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2025–Present"
+
+      - role: "School Committee Member"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2023–Present"
+
+      - role: "HSW Committee Member"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2024–Present"

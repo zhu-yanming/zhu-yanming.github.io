@@ -1,0 +1,67 @@
+{% assign grant = include.grant %}
+
+<div class="card grant-card shadow-sm bg-white mb-3">
+    <div class="card-body p-4">
+
+        <h3 class="grant-title">
+            {{ grant.title }}
+
+            {% if grant.badge %}
+                <div class="grant-badge-row">
+                    <span class="grant-badge">
+                    <i class="fas fa-bullhorn"></i>
+                    {{ grant.badge }}
+                    </span>
+                </div>
+            {% endif %}
+        </h3>
+
+        <div class="grant-meta">
+
+            {% if grant.role %}
+            <div>
+                <i class="fas fa-user-tie grant-meta-icon"></i>
+                <strong>Role:</strong> {{ grant.role }}
+            </div>
+            {% endif %}
+
+            {% if grant.funding_body %}
+            <div>
+                <i class="fas fa-building-columns grant-meta-icon"></i>
+                <strong>Funding body:</strong>
+                {{ grant.funding_body }}
+            </div>
+            {% endif %}
+
+            {% if grant.amount %}
+            <div>
+                <i class="fas fa-dollar-sign grant-meta-icon"></i>
+                <strong>Funding:</strong> {{ grant.amount }}
+            </div>
+            {% endif %}
+
+            {% if grant.period %}
+            <div>
+                <i class="far fa-calendar-alt grant-meta-icon"></i>
+                <strong>Period:</strong> {{ grant.period }}
+            </div>
+            {% endif %}
+
+        </div>
+
+        {% if grant.description %}
+        <p class="grant-description">
+            {{ grant.description }}
+        </p>
+        {% endif %}
+
+        {% if grant.tags %}
+        <div class="grant-tags">
+            {% for tag in grant.tags %}
+            <span class="grant-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</div>

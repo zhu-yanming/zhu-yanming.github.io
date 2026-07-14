@@ -1,0 +1,121 @@
+---
+layout: default
+title: Research Grants
+navbar_title: Grants
+<!-- body_attr: >-
+  data-spy="scroll" data-target="#navbar-grant-year" data-offset="0" -->
+---
+
+{% assign sorted_grants = site.data.grants.grants | sort: "year" | reverse %}
+{% assign grants_by_year = sorted_grants | group_by: "year" %}
+
+<div class="row">
+
+    <!-- Main grant list -->
+    <div class="col-12 col-lg-10">
+
+        <div class="grant-page-header mb-4">
+            <h1 class="grant-page-title">
+                <i class="fas fa-flask mr-2"></i>Research Grants
+            </h1>
+        </div>
+
+        {% for year in grants_by_year %}
+
+        <section
+            id="grant-year-{{ year.name }}"
+            class="grant-year-section">
+
+            <h2 class="grant-year-heading">
+                {{ year.name }}
+            </h2>
+
+            {% for grant in year.items %}
+                {% include widgets/grant_card.html grant=grant %}
+            {% endfor %}
+
+        </section>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- Right-hand year navigation -->
+    <div class="col-2 d-none d-lg-block">
+
+        <nav
+            id="navbar-grant-year"
+            class="nav nav-pills flex-column sticky-top grant-year-nav">
+
+            {% for year in grants_by_year %}
+            <a
+                class="nav-link d-block {% if forloop.first %}active{% endif %}"
+                href="#grant-year-{{ year.name }}">
+                {{ year.name }}
+            </a>
+            {% endfor %}
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("navbar-grant-year");
+
+    if (!nav) {
+        return;
+    }
+
+    const yearLinks = Array.from(
+        nav.querySelectorAll(".nav-link")
+    );
+
+    const yearHeadings = Array.from(
+        document.querySelectorAll(".grant-year-heading")
+    );
+
+    function updateActiveYear() {
+        if (yearLinks.length === 0 || yearHeadings.length === 0) {
+            return;
+        }
+
+        /*
+         * Use the vertical position of the first item in the
+         * right-hand navigation as the activation line.
+         *
+         * When a left-hand year heading reaches this line,
+         * the corresponding navigation item becomes active.
+         */
+        const triggerY =
+            yearLinks[0].getBoundingClientRect().top +
+            yearLinks[0].offsetHeight / 2;
+
+        let activeIndex = 0;
+
+        yearHeadings.forEach(function (heading, index) {
+            if (heading.getBoundingClientRect().top <= triggerY) {
+                activeIndex = index;
+            }
+        });
+
+        yearLinks.forEach(function (link, index) {
+            link.classList.toggle("active", index === activeIndex);
+        });
+    }
+
+    updateActiveYear();
+
+    window.addEventListener("scroll", updateActiveYear, {
+        passive: true
+    });
+
+    window.addEventListener("resize", updateActiveYear);
+});
+</script>

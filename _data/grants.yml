@@ -1,0 +1,87 @@
+grants:
+  - year: 2026
+    title: "Smart Artificial Intelligence (AI) Tools Enabling More Efficient, Precise, and Consistent Cell Analysis and Subtyping for Thyroid Cancer Management"
+    role: "Lead CI"
+    funding_body: "Australian's Economic Accelerator (AEA)"
+    amount: "A$568,484"
+    period: "2026-2027"
+    description: >-
+
+    tags:
+      - Biomedical AI
+      - Computational Pathology
+
+  - year: 2025
+    title: "Secure and Scalable Multiparty Quantum Communication Protocols"
+    role: "2nd CI"
+    funding_body: "Industry Partner"
+    amount: "A$67,082"
+    period: "2025-2027"
+    description: >-
+
+    tags:
+      - AI for Quantum
+
+  
+  - year: 2025
+    title: "Intelligent Agent for Efficient and Effective Frequency Control Ancillary Services Targeting Renewable Energy Power Systems"
+    role: "Lead CI"
+    funding_body: "Australian's Economic Accelerator (AEA)"
+    amount: "A$703,091"
+    period: "2025-2026"
+    description: >-
+
+    tags:
+      - Trustwortht AI
+      - Smart Grid
+
+  - year: 2024
+    title: "High-end GPU server for AI research: Nvidia DGX A100"
+    role: "3rd CI"
+    funding_body: "Griffith University"
+    amount: "A$300,000"
+    period: "2024"
+    description: >-
+
+    tags:
+      - AI
+      - Infrastructure
+
+  - year: 2024
+    title: "Histopathology-Based Cancer Diagnosis and Prognosis"
+    role: "Lead CI"
+    funding_body: "Griffith University"
+    amount: "A$7,000"
+    period: "2024"
+    description: >-
+
+    tags:
+      - Biomedical AI
+      - Computational Pathology
+
+
+
+  - year: 2023
+    title: "Diffusion MRI for White Matter Structure and Connectivity Analysis"
+    role: "Lead CI"
+    funding_body: "Griffith University"
+    amount: "A$7,000"
+    period: "2023"
+    description: >-
+
+    tags:
+      - Biomedical AI
+      - Neuroimaging
+
+  - year: 2023
+    title: "AI-Enhanced Resilient, Efficient, and Cyber-Secure Power Management System"
+    badge: "Featured in Ministerial Media Release"
+    role: "2nd CI"
+    funding_body: "Australian Government, National Industry PhD Program"
+    amount: "A$864,000"
+    period: "2023-2027"
+    description: >-
+
+    tags:
+      - Trustworthy AI
+      - Smart Grid

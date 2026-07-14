@@ -280,6 +280,13 @@ div.lazy {
     display: block;
 }
 
+.cover-16x10fill {
+    aspect-ratio: 16 / 10;
+    object-fit: fill;
+    object-position: center;
+    display: block;
+}
+
 .cover-4x3 {
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -422,4 +429,306 @@ div.lazy {
 .teaching-description {
     color: #333;
     line-height: 1.5;
+}
+/* =========================================================
+   Teaching page
+   ========================================================= */
+
+.teaching-page-header {
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.teaching-page-title {
+    margin-left: 0.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #1f2937;
+}
+
+.teaching-card {
+    width: 100%;
+    border: 1px solid #e1e6ee;
+    border-radius: 0.8rem;
+}
+
+
+
+/* =========================================================
+   Research grants page
+   ========================================================= */
+
+.grant-page-header {
+    padding-top: 0.9rem;
+}
+
+.grant-page-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* .grant-page-intro {
+    max-width: 850px;
+    color: #5f6772;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+} */
+
+/* Each year section */
+.grant-year-section {
+    scroll-margin-top: 10px;
+    margin-bottom: 0rem;
+}
+
+.grant-year-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+/* Right-hand year navigation */
+.grant-year-nav {
+    top: 20px;
+    padding-top: 5rem;
+}
+
+.grant-year-nav .nav-link {
+    width: 100%;
+    padding: 0.55rem 1rem;
+    margin-bottom: 0.15rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: #2563eb;
+}
+
+.grant-year-nav .nav-link:hover {
+    background-color: #eef4ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.grant-year-nav .nav-link.active {
+    color: #ffffff;
+    background-color: #3f76ed;
+}
+
+/* Grant card */
+.grant-card {
+    width: 100%;
+    border: 1px solid #e1e6ee;
+    border-radius: 0.8rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.grant-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd8f5;
+    box-shadow: 0 0.45rem 1rem rgba(31, 41, 55, 0.10) !important;
+}
+
+
+/* Grant title */
+.grant-title {
+    color: #2563eb;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.38;
+    margin-bottom: 0.8rem;
+}
+
+
+/* Role, funding body, amount and period */
+.grant-meta {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 0.9rem;
+}
+
+.grant-meta > div {
+    margin-bottom: 0.12rem;
+}
+
+.grant-meta-icon {
+    width: 1.25rem;
+    color: #64748b;
+    text-align: center;
+    margin-right: 0.2rem;
+}
+
+/* Description */
+.grant-description {
+    color: #303640;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
+}
+
+/* Tags */
+.grant-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.grant-tag {
+    display: inline-block;
+    padding: 0.16rem 0.52rem;
+    border: 1px solid #d7e2ff;
+    border-radius: 999px;
+    background-color: #f4f7ff;
+    color: #2f63d6;
+    font-size: 0.80rem;
+    line-height: 1.35;
+}
+
+.grant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  padding: 3px 9px;
+
+  border: 1px solid #ffd591;
+  border-radius: 999px;
+
+  background-color: #fff7e6;
+  color: #9a5b00;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.grant-badge i {
+  font-size: 0.8rem;
+}
+
+/* Smooth scrolling when clicking a year */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile layout */
+@media (max-width: 991.98px) {
+    .grant-year-heading {
+        font-size: 1.65rem;
+    }
+
+    .grant-card .card-body {
+        padding: 1.25rem !important;
+    }
+}
+
+
+
+
+/* ==========================
+   Service page
+   ========================== */
+
+.service-page-header {
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.service-page-title {
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #1f2937;
+}
+
+.service-card {
+  border: 1px solid #d9dee8;
+  border-radius: 0.85rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  background-color: #ffffff;
+}
+
+.service-card .card-body {
+  padding: 1.25rem 1.4rem;
+}
+
+.service-section-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.service-section-title i {
+  margin-right: 0.3rem;
+}
+
+.service-item {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #d9dee8;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0.1rem;
+}
+
+.service-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.service-role {
+  color: #315efb;
+  font-weight: 600;
+}
+
+.service-name {
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.service-name:hover {
+  color: #315efb;
+  text-decoration: underline;
+}
+
+.service-organisation {
+  margin-top: 0.2rem;
+  color: #202938;
+  font-size: 0.96rem;
+}
+
+.service-period {
+  margin-top: 0.1rem;
+  color: #667085;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .service-heading {
+    display: block;
+  }
+
+  .service-role,
+  .service-name {
+    display: block;
+  }
+
+  .service-role {
+    margin-bottom: 0.15rem;
+  }
 }

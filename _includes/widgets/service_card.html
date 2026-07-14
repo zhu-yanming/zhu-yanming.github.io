@@ -1,0 +1,65 @@
+{% for section in site.data.services.sections %}
+
+<div class="card service-card mb-3">
+
+  <div class="card-body">
+
+    <h2 class="service-section-title">
+      {% if section.icon %}
+        <i class="{{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+
+    <div class="service-list">
+
+      {% for item in section.items %}
+
+      <div class="service-item">
+
+        <div class="service-heading">
+
+          <span class="service-role">
+            {{ item.role }}
+          </span>
+
+          {% if item.url %}
+            <a
+              class="service-name"
+              href="{{ item.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ item.name }}
+            </a>
+          {% else %}
+            <span class="service-name">
+              {{ item.name }}
+            </span>
+          {% endif %}
+
+        </div>
+
+        {% if item.organisation %}
+          <div class="service-organisation">
+            {{ item.organisation }}
+          </div>
+        {% endif %}
+
+        {% if item.period %}
+          <div class="service-period">
+            {{ item.period }}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endfor %}

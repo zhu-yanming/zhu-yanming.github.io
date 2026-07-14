@@ -5,13 +5,17 @@ pages:
 #  url: /
 - name: Home
   url: /index #index_layout2
-- name: Publications
-  url: /publications
-# - name: Blog
-#   url: /blog
-# - name: Showcase
-#   url: /showcase
 - name: AI4Health Lab
   url: https://ai4healthlab.github.io/
+- name: Publications
+  url: /publications
+- name: Grants
+  url: /grants
+# - name: Blog
+  # url: /blog
+# - name: Showcase
+  # url: /showcase
 - name: Teaching
   url: /teaching
+- name: Services
+  url: /services
