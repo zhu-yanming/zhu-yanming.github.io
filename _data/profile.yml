@@ -40,8 +40,8 @@ short_bio: >-
   </p>
 # improved human health and wellbeing.
 portrait_url: /assets/images/photos/portrait3.png
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+#portrait_caption: >-
+#  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 # education:
 # - name: Massachusetts Institute of Technology
