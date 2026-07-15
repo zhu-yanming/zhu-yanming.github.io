@@ -6,7 +6,7 @@ grants:
     amount: "A$568,484"
     period: "2026-2027"
     description: >-
-
+    
     tags:
       - Biomedical AI
       - Computational Pathology
@@ -21,7 +21,6 @@ grants:
 
     tags:
       - AI for Quantum
-
   
   - year: 2025
     title: "Intelligent Agent for Efficient and Effective Frequency Control Ancillary Services Targeting Renewable Energy Power Systems"
@@ -58,8 +57,6 @@ grants:
     tags:
       - Biomedical AI
       - Computational Pathology
-
-
 
   - year: 2023
     title: "Diffusion MRI for White Matter Structure and Connectivity Analysis"

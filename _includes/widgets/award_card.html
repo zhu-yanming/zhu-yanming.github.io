@@ -1,0 +1,65 @@
+<div class="award-list">
+
+    {% for award in site.data.awards.awards %}
+
+    <div class="card award-card shadow-sm bg-white mb-4">
+        <div class="card-body p-4">
+
+            <!-- Award title -->
+            {% if award.link %}
+            <h3 class="award-card-title">
+                <a
+                    href="{{ award.link }}"
+                    target="_blank"
+                    rel="noopener">
+                    {{ award.title }}
+                </a>
+            </h3>
+            {% else %}
+            <h3 class="award-card-title">
+                {{ award.title }}
+            </h3>
+            {% endif %}
+
+            <!-- Award information -->
+            <div class="award-meta">
+
+                {% if award.organization %}
+                <div>
+                    <i class="fas fa-university award-meta-icon"></i>
+                    <strong>Awarding organisation:</strong>
+                    {{ award.organization }}
+                </div>
+                {% endif %}
+
+                {% if award.year %}
+                <div>
+                    <i class="far fa-calendar-alt award-meta-icon"></i>
+                    <strong>Year:</strong>
+                    {{ award.year }}
+                </div>
+                {% endif %}
+
+                {% if award.category %}
+                <div>
+                    <i class="fas fa-tag award-meta-icon"></i>
+                    <strong>Category:</strong>
+                    {{ award.category }}
+                </div>
+                {% endif %}
+
+            </div>
+
+            <!-- Optional description -->
+            {% if award.description %}
+            <p class="award-card-description">
+                {{ award.description }}
+            </p>
+            {% endif %}
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>

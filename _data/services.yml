@@ -43,6 +43,27 @@ sections:
         period: "2024"
 
 
+  - title: "Internal Academic Service"
+    icon: "fas fa-building-columns"
+    items:
+      - role: "Peer-Mentor Coordinator"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2025–Present"
+
+      - role: "School Committee Member"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2023–Present"
+
+      - role: "HSW Committee Member"
+        name: "School of Information and Communication Technology"
+        # organisation: "Griffith University"
+        period: "2024–Present"
+
+
+
+
   # - title: "Program Committees"
   #   icon: "fas fa-clipboard-check"
   #   items:
@@ -92,22 +113,3 @@ sections:
   #     - role: "Conference Reviewer"
   #       name: "10+ international conferences"
   #       organisation: "Including CVPR, ICCV, ECCV, AAAI, MICCAI and ICME"
-
-
-  - title: "Internal Academic Service"
-    icon: "fas fa-building-columns"
-    items:
-      - role: "Peer-Mentor Coordinator"
-        name: "School of Information and Communication Technology"
-        # organisation: "Griffith University"
-        period: "2025–Present"
-
-      - role: "School Committee Member"
-        name: "School of Information and Communication Technology"
-        # organisation: "Griffith University"
-        period: "2023–Present"
-
-      - role: "HSW Committee Member"
-        name: "School of Information and Communication Technology"
-        # organisation: "Griffith University"
-        period: "2024–Present"

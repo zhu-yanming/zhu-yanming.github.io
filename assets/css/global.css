@@ -732,3 +732,112 @@ a.service-name:hover {
     margin-bottom: 0.15rem;
   }
 }
+
+
+
+/* =========================================================
+   Awards page
+   ========================================================= */
+
+.award-page-header {
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.award-page-title {
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+/* Individual award card */
+
+.award-card {
+    width: 100%;
+    border: 1px solid #d9e1ee;
+    border-radius: 0.8rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.award-card:hover {
+    transform: translateY(-2px);
+    border-color: #c5d4f2;
+    box-shadow: 0 0.45rem 1rem rgba(31, 41, 55, 0.10) !important;
+}
+
+
+/* Award title */
+
+.award-card-title {
+    margin-bottom: 0.9rem;
+    color: #315efb;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.award-card-title a {
+    color: #315efb;
+    text-decoration: none;
+}
+
+.award-card-title a:hover {
+    color: #2147cc;
+    text-decoration: none;
+}
+
+
+/* Award metadata */
+
+.award-meta {
+    margin-bottom: 0.8rem;
+    color: #374151;
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.award-meta > div {
+    margin-bottom: 0.12rem;
+}
+
+.award-meta-icon {
+    width: 1.3rem;
+    margin-right: 0.25rem;
+    color: #64748b;
+    text-align: center;
+}
+
+
+/* Description */
+
+.award-card-description {
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    color: #4b5563;
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 575.98px) {
+    .award-page-title {
+        font-size: 1.5rem;
+    }
+
+    .award-card .card-body {
+        padding: 1.25rem !important;
+    }
+
+    .award-card-title {
+        font-size: 1.08rem;
+    }
+}
